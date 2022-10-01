@@ -54,21 +54,10 @@ useEffect(() => {
       if(pickedCharacterArr.find(item => item === e.target.id)){
 
         setPickedCharacterArr([]);
-
-        if(score > bestScore){
-          setBestScore(score);
-          setScore(pickedCharacterArr.length);
-        }else{
-          setScore(pickedCharacterArr.length);
-        }
-
       }else{
-        setPickedCharacterArr(
-          [...pickedCharacterArr, e.target.id]
-        );
-
-        setScore(pickedCharacterArr.length);
+        setPickedCharacterArr([...pickedCharacterArr, e.target.id]);
       }
+
     };
 
   const allCharCard = document.querySelectorAll('.character-card');
@@ -78,24 +67,8 @@ useEffect(() => {
   allCharCard.forEach(card => card.removeEventListener("click", changeCharOnClick));
 };
 
-}, [ character1,
-     character2,
-     character3,
-     character4,
-     character5,
-     character6,
-     character7,
-     character8,
-     character9,
-     character10,
-     character11,
-     character12,
-     character13,
-     character14,
-     character15,
-     pickedCharacterArr,
-     score,
-     bestScore,
+}, [
+     pickedCharacterArr
    ]);
 
 useEffect(() => {
@@ -108,6 +81,15 @@ useEffect(() => {
 
     setCharacterArr([...tempCharacterArr]);
 
+    setScore(pickedCharacterArr.length);
+
+    if(score == 15){
+      window.alert('you won! good job buddy.');
+    }
+
+    if(score > bestScore){
+      setBestScore(score);
+    }
 
     //set card to random charcters
      setCharacter1(characterArr[0]);
@@ -125,7 +107,13 @@ useEffect(() => {
      setCharacter13(characterArr[12]);
      setCharacter14(characterArr[13]);
      setCharacter15(characterArr[14]);
-}, [pickedCharacterArr]);
+}, [pickedCharacterArr, score, bestScore]);
+
+const resetPicked = () => {
+  setPickedCharacterArr([]);
+}
+
+
 
 
   return (
