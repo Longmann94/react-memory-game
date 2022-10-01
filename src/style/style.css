@@ -1,3 +1,65 @@
-.red{
+body{
+  font-family: 'Dancing Script', cursive;
+  background-image: url('../../public/img/background.webp');
+  background-size: cover;
+}
+
+a{
+  color: blue;
+  text-decoration: none;
+}
+
+.title{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.header{
+
+}
+
+.scoreboard{
+  font-size: 3rem;
+  text-align: center;
   color: red;
+}
+
+.footer{
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 2rem;
+}
+
+.main-container{
+  justify-content: center;
+  display: grid;
+  grid: 300px / repeat(5, 150px);
+  gap: 3rem;
+}
+
+.character-card{
+  justify-self: center;
+  align-self: center;
+  height: 260px;
+  width: 150px;
+  display: grid;
+  grid: 1fr 50px / 1fr;
+  text-align: center;
+  font-size: 2rem;
+  color: purple;
+}
+
+.character-img{
+  height: 100px;
+  width: 50px;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
